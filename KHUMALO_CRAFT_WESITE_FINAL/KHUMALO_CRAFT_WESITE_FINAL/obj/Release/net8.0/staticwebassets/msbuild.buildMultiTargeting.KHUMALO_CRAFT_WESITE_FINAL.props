@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\KHUMALO_CRAFT_WESITE_FINAL.props" />
+</Project>

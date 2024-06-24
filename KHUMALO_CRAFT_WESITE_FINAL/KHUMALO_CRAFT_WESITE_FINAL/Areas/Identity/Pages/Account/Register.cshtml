@@ -1,0 +1,73 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "REGISTER";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-color: #1A1A1A;
+            color: ghostwhite;
+        }
+        /* format for the form section */
+        .form-container {
+            width: 400px; /* Set the width of the form container */
+            margin: 0 auto; /* Center the form horizontally */
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+            background-color: #f0f0f0;
+            color: black;
+        }
+        /* format for the heading */
+        #myHeader {
+            padding: 1%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <br />
+    <!-- header section -->
+    <h1 id="myHeader" style="color: white; font-size: 2em;">@ViewData["Title"]</h1>
+    <!-- form section -->
+    <div class="form-container">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" style="color:black" autocomplete=" username" aria-required="true" placeholder="name@example.com" />
+                <label style="color:black" asp-for="Input.Email">Email</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label style="color:black" asp-for="Input.Password">Password</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input style="color:black" asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label style="color:black" asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+        </form>
+    </div>
+</body>
+</html>

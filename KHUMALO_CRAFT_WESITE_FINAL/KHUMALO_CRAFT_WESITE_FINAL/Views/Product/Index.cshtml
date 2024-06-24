@@ -1,0 +1,115 @@
+﻿@model IEnumerable<KHUMALO_CRAFT_WESITE_FINAL.Models.Product>
+
+@{
+    ViewData["Title"] = "Product";
+}
+
+<style>
+    /* Styling for the background color */
+    body {
+        background-color: #1A1A1A;
+        color: black;
+    }
+
+    /* Styling for button spacing */
+    .btn-spacing {
+        margin-right: 10px;
+    }
+
+    /* Ensuring all cards have the same height */
+    .card {
+        height: 100%;
+    }
+
+    /* Ensuring all card images have the same height */
+    .card-img-top {
+        height: 200px;
+        object-fit: cover; /* Ensures the image covers the entire area */
+    }
+
+    /* Setting consistent height for card body */
+    .card-body {
+        height: 150px;
+        overflow: hidden; /* Hide overflow for longer descriptions */
+    }
+</style>
+<form asp-controller="Product" asp-action="Index" method="get">
+    <div class="col-12 text-center">
+        <div class="form-group">
+        <br />
+        <br />
+        <h5 style="color:antiquewhite" for="Category">Search by Category:</h5>
+        <br />
+        <select name="Category" class="form-control">
+            <option value="">All</option>
+            @foreach (var category in ViewBag.Categories as List<string>)
+            {
+                <option value="@category">@category</option>
+            }
+        </select>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <br />
+        <input style="color:antiquewhite" type="submit" value="Search" class="btn btn-dark btn-outline-light" />
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <br />
+        <h1 id="myHeader" style="color: white; font-size: 5em; font-family: Century, Times, serif">
+            <center>My Work</center>
+        </h1>
+        <br />
+        <p>
+            <a class="btn btn-dark btn-outline-light" asp-action="Create" class="btn btn-primary">Create New product</a>
+        </p>
+        <br />
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card mb-5">
+                    <h3 class="card-header">@Html.DisplayFor(modelItem => item.ProductName)</h3>
+                    @if (!string.IsNullOrEmpty(item.ProductImage))
+                    {
+                        <img src="@item.ProductImage" class="card-img-top" alt="@item.ProductImage" />
+                    }
+                    else
+                    {
+                        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                            <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                        </svg>
+                    }
+
+                    <div class="card-body">
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                        <p class="card-text">R @Html.DisplayFor(modelItem => item.ProductPrice)</p>
+                        <p class="card-text">Availability: @Html.DisplayFor(modelItem => item.ProductAvailability)</p>
+                        <p class="card-text">Category: @Html.DisplayFor(modelItem => item.ProductCategory)</p>
+                    </div>
+
+                    <div class="card-footer text-muted">
+                        <div class="d-flex justify-content-center">
+                            <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                                <input type="hidden" name="productId" value="@item.ProductId" />
+                                <button type="submit" class="btn btn-dark btn-spacing">Add to Cart</button>
+                            </form>
+                            <form asp-controller="Product" asp-action="Delete" asp-route-id="@item.ProductId" method="post" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                                <button type="submit" class="btn btn-dark btn-spacing">Delete item</button>
+                            </form>
+                            <a asp-controller="Product" class="btn btn-dark" asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-info btn-spacing">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="KhumaloCraft-ST10249843" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\sajan\\Desktop\\2024\\CLDV6211\\FINAL\ POE\\KC_FINAL\\KHUMALO_CRAFT_WESITE_FINAL\\KHUMALO_CRAFT_WESITE_FINAL\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<KHUMALO_CRAFT_WESITE_FINAL.Models.Cart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background-color: #1A1A1A;
+        color: ghostwhite;
+    }
+
+    .table {
+        background-color: #ffffff;
+        color: black;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    a {
+        color: #1A1A1A;
+    }
+
+        a.btn {
+            color: ghostwhite;
+            border: 2px solid white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+            a.btn:hover {
+                background-color: ghostwhite;
+                color: #1A1A1A;
+            }
+</style>
+
+<h1>Cart</h1>
+
+<p>
+    <a class="btn btn-dark" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.ProductId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Userid)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CartId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CartId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CartId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

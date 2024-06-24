@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            background-color: #1A1A1A;
+            color: white;
+        }
+
+        #myHeader {
+            padding: 2%;
+            text-align: center;
+        }
+
+        .city {
+            background-color: darkgrey;
+            padding: 2%;
+            text-align: center;
+        }
+        
+        /* Container styles */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .block {
+            width: calc(25% - 20px);
+            padding: 20px;
+            background-color: whitesmoke;
+            margin-right: 20px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+            /* Hover effect for blocks */
+
+            .block:hover {
+                transform: scale(1.1);
+                filter: brightness(70%);
+            }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .content {
+            font-size: 14px;
+        }
+
+        /* Column styles */
+        .column {
+            flex-basis: calc(50% - 10px);
+            margin-bottom: 20px;
+            text-align: center
+        }
+
+            .column img {
+                width: 100%;
+                max-width: 100%; 
+                height: 100; 
+            }
+    </style>
+</head>
+<body>
+
+    <h1 id="myHeader" style="color: white; font-size: 5em; font-family:'Times New Roman', Times, serif">About Us</h1>
+
+    <div class="container">
+        <div class="column">
+            <img src="~/images/about page image.jpg" height="642"/>
+        </div>
+        <!--our story section-->
+        <div class="column">
+            <h5 class="city">Our Story</h5>
+            <div class="card" style="background-color:white; color: black; padding: 20px; border-radius: 10px;">
+                <p style="color:black; text-align:justify; margin-left:2%; margin-right:2%;">
+                    James Khumalo, a visionary entrepreneur, founded KhumaloCraft Emporium with a passion for showcasing artisans' exquisite craftsmanship worldwide. His journey stemmed from a deep appreciation for handcrafted products and a desire to create a platform for artisans to reach a global audience. KhumaloCraft emerged as a vibrant community where artisans could thrive, and customers could connect with the stories behind each meticulously crafted piece.
+                    <br />
+                    <br />
+                    Driven by a belief in craftsmanship's ability to transcend borders, Khumalo curated a diverse collection of handcrafted treasures, ensuring each item reflected its creator's skill and passion. Through strategic partnerships and innovative marketing, KhumaloCraft captured the hearts of discerning connoisseurs globally, propelling artisans from remote villages onto the international stage.
+                    <br />
+                    <br />
+                    Beyond commerce, KhumaloCraft symbolized empowerment and cultural exchange, fostering connections between artisans and patrons worldwide. James Khumalo's commitment to fair trade and sustainability ensured each purchase made a positive impact on artisans and their communities, amplifying KhumaloCraft's ethos of authenticity and integrity in artisanal commerce.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+    <br />
+    <br />
+<!--our values section-->
+<h5 class="city" style="color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Our values</h5>
+<br />
+    <p>
+        At KhumaloCraft, our values are at the heart of everything we do. They guide our decisions, inspire our actions, and shape our culture. Here are the core values that define who we are:
+
+    <br />
+    <br />
+
+        <div class="container">
+            <div class="block">
+                <div class="title" style="color: black;">Quality:</div>
+                <div class="content" style="color: black;">We believe in offering only the finest handcrafted products to our customers. Each item in our collection is carefully curated to ensure exceptional quality and craftsmanship.</div>
+            </div>
+            <div class="block">
+                <div class="title" style="color: black;">Diversity:</div>
+                <div class="content" style="color: black;">We celebrate diversity and seek to promote artisans from different cultures and backgrounds. We believe that diversity enriches our lives and makes our community stronger.</div>
+            </div>
+            <div class="block">
+                <div class="title" style="color: black;">Sustainability:</div>
+                <div class="content" style="color: black;">We are committed to environmental sustainability and support eco-friendly practices. We strive to minimize our impact on the planet and promote responsible consumption.</div>
+            </div>
+            <div class="block">
+                <div class="title" style="color: black;">Community:</div>
+                <div class="content" style="color: black;">We value our community of artisans, customers, and partners, and strive to foster meaningful connections. We believe that by coming together, we can create positive change and make a difference in the world.</div>
+            </div>
+        </div>
+    </p>
+
+<br />
+<br />
+<!--about the founder section-->
+    <h5 class="city" style="color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">about the founder</h5>
+    <p>
+    <div style="display: flex;">
+        <div class="card" style="background-color:white; color: black; padding: 20px; border-radius: 10px;">
+
+        <div style="flex: 1; padding-right: 20px;">
+            <p style="color: black; text-align: justify;">
+                James Khumalo isn't merely an entrepreneur; he's a visionary leader driven by a profound commitment to global impact. With a background in business management and a flair for innovation, James has always sought opportunities to challenge norms. His journey with KhumaloCraft is fueled by a mission to empower artisans, celebrate cultural diversity, and promote sustainability.
+                <br />
+                <br />
+                At the core of James Khumalo's vision lies a dedication to uplifting artisans worldwide. KhumaloCraft isn't just a business venture; it's a platform for artisans to showcase their talents and preserve cultural heritage. By providing opportunities for economic empowerment, James fosters pride and dignity within artisan communities.
+                <br />
+                <br />
+                Furthermore, James Khumalo champions diversity through KhumaloCraft's curated selection of artisanal goods. The emporium serves as a bridge between cultures, promoting cross-cultural appreciation and understanding. Alongside this celebration of diversity, James is unwavering in his commitment to sustainable business practices, ensuring KhumaloCraft operates with environmental responsibility at its core.
+            </p>
+        </div>
+        <div style="flex: 1;">
+                <center><img src="~/images/james khumalo.jpg" style="width: 600; height: 600;"></center>
+        </div>
+    </div>
+</html>
